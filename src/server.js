@@ -40,5 +40,6 @@ app.use((req, res, next) => {
 });
 
 app.use('/', indexRouter);
+app.use('/test', indexRouter);
 
 app.listen(PORT, () => console.log(`Server is started on port ${PORT}`));
