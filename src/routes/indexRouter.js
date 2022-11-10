@@ -2,7 +2,6 @@ import express from 'express';
 import quest from '../../questions.json';
 import { Round } from '../../db/models';
 
-
 const router = express.Router();
 
 router.get('/', (req, res) => {
@@ -18,7 +17,7 @@ router.get('/result', (req, res) => {
 });
 
 router.get('/result/:id', async (req, res) => {
-  const results = await Round.findAll({ where: { user_id: req.params.id } });
+  const results = await Round.findAll({ where: { user_id: req.session.user.id } });
   const initState = { results };
   res.render('Layout', initState);
 });

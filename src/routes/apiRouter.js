@@ -11,7 +11,7 @@ router.post('/', async (req, res) => {
 
   req.session.user = { id: newUser.id, name: newUser.name };
 
-  res.json(newUser);
+  res.sendStatus(200);
 });
 
 export default router;
