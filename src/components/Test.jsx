@@ -10,7 +10,9 @@ export default function Test({ qsts }) {
       body: JSON.stringify({ asn: e.target.flexRadioDefault.value, qst: index }),
     });
     setIndex((prev) => {
-      if (prev < qsts.length) return prev + 1;
+      console.log(prev);
+      console.log(qsts.length);
+      if (prev < qsts.length - 1) return prev + 1;
       window.location = '/result';
       return window.location;
     });
