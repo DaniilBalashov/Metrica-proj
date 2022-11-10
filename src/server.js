@@ -4,7 +4,7 @@ import path from 'path';
 import jsxRender from './utils/jsxRender';
 import indexRouter from './routes/indexRouter';
 import { Round } from '../db/models';
-import quest from '../../questions.json';
+import quest from '../questions.json';
 import apiRouter from './routes/apiRouter';
 
 const app = express();
