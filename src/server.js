@@ -6,6 +6,7 @@ import store from 'session-file-store';
 import jsxRender from './utils/jsxRender';
 import indexRouter from './routes/indexRouter';
 import { Round } from '../db/models';
+import quest from '../../questions.json';
 
 const app = express();
 const PORT = 3000;
