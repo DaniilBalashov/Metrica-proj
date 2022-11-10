@@ -82,6 +82,11 @@
   color: #37474f;
 }
 
+.goToTest:hover {
+  width: 216px;
+  height: 58px;
+  font-size: 20px;
+}
 /* ___________________________________________ */
 
 
@@ -91,7 +96,7 @@
 }
 
 .questionNumber {
-  /* margin-top: 0px;    */
+  /* margin-top: 12px;    */
   display: flex;
   justify-content: flex-start; 
   flex-direction: column;
@@ -99,7 +104,7 @@
 
 .number {
   margin-top: 28px;
-  font-size: 11px;
+  font-size: 13px;
   font-family: 'Roboto', sans-serif;
   color: #90a4ae;
 }
@@ -114,14 +119,14 @@
 
 
 .questionText {
-  margin-top: 23px;
+  margin-top: 28px;
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
 
 .questionTittle {
-  font-size: 11px;
+  font-size: 13px;
   font-family: 'Roboto', sans-serif;
   color: #90a4ae;
 }
@@ -137,10 +142,11 @@
   color: #37474f;
 }
 
-.image {
+.image > img {
   width: 550px;
   height: 300px;
-  border: solid black 1px;  
+  object-fit: contain;
+  /* border: solid black 1px;   */
 }
 
 /* HORIZONTAL RULE */
@@ -177,8 +183,14 @@
   margin-right: 43px;
 }
 
+.answerButton:hover {
+  width: 216px;
+  height: 42px;
+  font-size: 14px;
+}
+
 .variants {
-  margin-top: 70px;
+  margin-top: 78px;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
