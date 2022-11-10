@@ -45,7 +45,7 @@ app.use((req, res, next) => {
 app.use('/', indexRouter);
 app.use('/test', indexRouter);
 
-app.post('/ono', async (req, res) => {
+app.post('/test/:userid', async (req, res) => {
   const { userid } = req.params;
   const { asn, qst } = req.body;
   await Round.create({
@@ -54,6 +54,11 @@ app.post('/ono', async (req, res) => {
     answer_id: asn,
     correction: quest[qst].answers[asn].isCorrect,
   });
+  if (qst === quest.length - 1) {
+    res.clearCookie('user_sid');
+    req.session.destroy();
+    return res.sendStatus(200);
+  }
   return res.sendStatus(200);
 });
 app.use('/api/v1/', apiRouter);
