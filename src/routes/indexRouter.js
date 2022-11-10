@@ -1,6 +1,7 @@
 import express from 'express';
 import quest from '../../questions.json';
 
+
 const router = express.Router();
 
 router.get('/', (req, res) => {
@@ -11,4 +12,5 @@ router.get('/test', (req, res) => {
   res.render('Layout', initialState);
 });
 
+// /test/:userid/:index
 export default router;

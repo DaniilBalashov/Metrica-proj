@@ -3,6 +3,8 @@ import morgan from 'morgan';
 import path from 'path';
 import jsxRender from './utils/jsxRender';
 import indexRouter from './routes/indexRouter';
+import { Round } from '../db/models';
+import quest from '../../questions.json';
 import apiRouter from './routes/apiRouter';
 
 const app = express();
@@ -23,6 +25,18 @@ app.use((req, res, next) => {
 });
 
 app.use('/', indexRouter);
+app.use('/test', indexRouter);
+app.post('/ono', async (req, res) => {
+  const { userid } = req.params;
+  const { asn, qst } = req.body;
+  await Round.create({
+    user_id: userid,
+    quest_id: qst,
+    answer_id: asn,
+    correction: quest[qst].answers[asn].isCorrect,
+  });
+  return res.sendStatus(200);
+});
 app.use('/api/v1/', apiRouter);
 
 app.listen(PORT, () => console.log(`Server is started on port ${PORT}`));
