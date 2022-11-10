@@ -1,5 +1,5 @@
-public/app.js
-public/vendor.js
+public/js/app.js
+public/js/vendor.js
 # Logs
 logs
 *.log
