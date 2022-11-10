@@ -1,23 +1,20 @@
 import React, { useState } from 'react';
 
-export default function Test({ qsts }) {
+export default function Test({ qsts, user }) {
   const [index, setIndex] = useState(0);
   const changeHanler = async (e) => {
     e.preventDefault();
-    await fetch('/ono/test', {
+    await fetch(`/test/${user.id}`, {
       method: 'POST',
       headers: { 'Content-type': 'application/json' },
       body: JSON.stringify({ asn: e.target.flexRadioDefault.value, qst: index }),
     });
     setIndex((prev) => {
-      console.log(prev);
-      console.log(qsts.length);
       if (prev < qsts.length - 1) return prev + 1;
       window.location = '/result';
       return window.location;
     });
   };
-  // /test/:userid/${index}
   return (
     <>
       <div
