@@ -5,6 +5,7 @@ import session from 'express-session';
 import store from 'session-file-store';
 import jsxRender from './utils/jsxRender';
 import indexRouter from './routes/indexRouter';
+import { Round } from '../db/models';
 
 const app = express();
 const PORT = 3000;
@@ -41,5 +42,16 @@ app.use((req, res, next) => {
 
 app.use('/', indexRouter);
 app.use('/test', indexRouter);
+app.post('/ono', async (req, res) => {
+  const { userid } = req.params;
+  const { asn, qst } = req.body;
+  await Round.create({
+    user_id: userid,
+    quest_id: qst,
+    answer_id: asn,
+    correction: quest[qst].answers[asn].isCorrect,
+  });
+  return res.sendStatus(200);
+});
 
 app.listen(PORT, () => console.log(`Server is started on port ${PORT}`));
