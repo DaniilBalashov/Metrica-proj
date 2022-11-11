@@ -11,7 +11,7 @@ export default function App({
 }) {
   console.log(user, 'AAAAAAAAA');
   return (
-    <div className="container">
+    <div className="wrapper">
       <NavBar />
       <Routes>
         <Route path="/" element={<MainPage />} />

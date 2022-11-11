@@ -15,12 +15,12 @@ export default function MainPage() {
     }
   };
   return (
-    <form onSubmit={submitHandler}>
-      <div className="card" style={{ width: '18rem' }}>
-        <div className="card-body">
-          <h5 className="card-title">Name</h5>
-          <input name="name" className="form-control" placeholder="Name" aria-label="Username" aria-describedby="basic-addon1" />
-          <button type="submit" className="btn btn-secondary">K testu</button>
+    <form className="form" onSubmit={submitHandler}>
+      <div className="underContainer">
+        <div className="form">
+          <h5 className="nameInputText">Введите ваше имя</h5>
+          <input name="name" className="inputName" placeholder="Вашк имя" aria-label="Username" aria-describedby="basic-addon1" />
+          <button type="submit" className="goToTest">Перейти к тестированию</button>
         </div>
       </div>
     </form>
