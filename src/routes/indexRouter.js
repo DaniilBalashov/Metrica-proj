@@ -12,13 +12,16 @@ router.get('/test', (req, res) => {
   res.render('Layout', initialState);
 });
 
-router.get('/result', (req, res) => {
-  res.render('Layout');
+router.get('/result/:id', (req, res) => {
+  const { id } = req.params;
+  const initState = { id };
+  res.render('Layout', initState);
 });
 
-router.get('/result/:id', async (req, res) => {
-  const results = await Round.findAll({ where: { user_id: req.session.user.id } });
-  const initState = { results };
+router.get('/result/:id/result', async (req, res) => {
+  const { id } = req.params;
+  const results = await Round.findAll({ where: { user_id: id } });
+  const initState = { results, qsts: quest };
   res.render('Layout', initState);
 });
 export default router;
