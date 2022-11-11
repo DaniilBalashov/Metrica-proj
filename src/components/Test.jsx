@@ -54,7 +54,6 @@ export default function Test({ qsts, user }) {
           <div className="ansBtn">
             <button type="submit" className="answerButton">ОТВЕТИТЬ</button>
           </div>
-          {/* <hr className="horRuleEnd" /> */}
         </form>
       </div>
     </>

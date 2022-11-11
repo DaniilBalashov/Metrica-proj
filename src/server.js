@@ -1,5 +1,4 @@
 import express from 'express';
-import morgan from 'morgan';
 import path from 'path';
 import session from 'express-session';
 import store from 'session-file-store';
@@ -12,14 +11,13 @@ import apiRouter from './routes/apiRouter';
 const app = express();
 const PORT = process.env.DB_PORT || 3000;
 
-app.engine('jsx', jsxRender);
-app.set('view engine', 'jsx');
+app.engine('js', jsxRender);
+app.set('view engine', 'js');
 app.set('views', path.join(__dirname, 'components'));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use(express.json());
-app.use(morgan('dev'));
 
 const FileStore = store(session);
 

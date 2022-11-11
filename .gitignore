@@ -1,5 +1,7 @@
 public/js/app.js
 public/js/vendor.js
+/distr
+/sessions
 # Logs
 logs
 *.log
