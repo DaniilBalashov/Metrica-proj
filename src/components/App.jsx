@@ -8,7 +8,7 @@ import Test from './Test';
 
 export default function App({ qsts, results, user }) {
   return (
-    <div className="container">
+    <div className="wrapper">
       <NavBar />
       <Routes>
         <Route path="/" element={<MainPage />} />
