@@ -25,6 +25,7 @@
 }
 
 .logo {
+  text-decoration: none;
   font-family: 'Roboto', sans-serif;
   font-size: 36px;
   color: #37474f;
@@ -44,7 +45,7 @@
   justify-content: center;
   flex-direction: column;
   /* flex-direction: row; */
-  margin-top: 400px;
+  margin-top: 200px;
 }
 
 .nameInputText {
@@ -128,27 +129,31 @@
 }
 
 .mainQuestion {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.86;
   letter-spacing: normal;
-  text-align: left;
+  text-align: center;
   color: #37474f;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .image > img {
-  width: 550px;
-  height: 300px;
-  object-fit: contain;
+  margin: auto;
+  /* width: 550px; */
+  /* height: 300px; */
+  /* object-fit: contain; */
   /* border: solid black 1px;   */
 }
 
 /* HORIZONTAL RULE */
 
 .horRuleEnd {
-  width: 1144px;
+  /* margin-top: 40px; */
+  width: 900px;
   margin: auto;
   background-color: #bdc6ce;
   /* height: 1px; */
@@ -157,26 +162,29 @@
 /* ___________________ */
 
 .footer {
-  margin-top: 580px;
+  margin-top: 500px;
 }
 
 .answerButton {
+  /* margin-top: 40px; */
   width: 208px;
   height: 36px;
-  margin: 20.5px 0 0 91.5px;
+  /* margin: 20.5px 0 0 91.5px; */
   border-radius: 30em;
   border-color: #2d89dc;
   border-width: 1px;
   font-size: 12px;
   font-family: 'Roboto', sans-serif;
   color: #2d89dc;
+  /* margin-top: 100px; */
+  /* margin-right: 263px; */
 }
 
 .ansBtn {
+  margin-top: 100px;
   display: flex;
-  justify-content: end;
-  margin-top: 10px;
-  margin-right: 43px;
+  /* justify-content: flex-end; */
+  /* margin-top: 10px; */
 }
 
 .answerButton:hover {
@@ -186,11 +194,16 @@
 }
 
 .variants {
-  margin-top: 78px;
+  width: 350px;
+  margin-left: -100px;
+  margin-top: 20px;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  flex-direction: column;
+  /* flex-direction: column; */
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  color: #37474f;
 }
 
 .checkboxes {

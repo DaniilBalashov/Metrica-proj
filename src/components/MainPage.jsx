@@ -19,7 +19,7 @@ export default function MainPage() {
       <div className="underContainer">
         <div className="form">
           <h5 className="nameInputText">Введите ваше имя</h5>
-          <input name="name" className="inputName" placeholder="Name" aria-label="Username" aria-describedby="basic-addon1" />
+          <input name="name" className="inputName" placeholder="Вашк имя" aria-label="Username" aria-describedby="basic-addon1" />
           <button type="submit" className="goToTest">Перейти к тестированию</button>
         </div>
       </div>
