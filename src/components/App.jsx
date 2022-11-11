@@ -9,7 +9,6 @@ import Test from './Test';
 export default function App({
   qsts, results, user, id,
 }) {
-  console.log(user, 'AAAAAAAAA');
   return (
     <div className="wrapper">
       <NavBar />

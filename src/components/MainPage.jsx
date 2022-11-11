@@ -18,8 +18,8 @@ export default function MainPage() {
     <form className="form" onSubmit={submitHandler}>
       <div className="underContainer">
         <div className="form">
-          <h5 className="nameInputText">Введите ваше имя</h5>
-          <input name="name" className="inputName" placeholder="Вашк имя" aria-label="Username" aria-describedby="basic-addon1" />
+          <h5 className="nameInputText">Введите ваше ФИО </h5>
+          <input name="name" className="inputName" placeholder="Ввод" aria-label="Username" aria-describedby="basic-addon1" />
           <button type="submit" className="goToTest">Перейти к тестированию</button>
         </div>
       </div>
