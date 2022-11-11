@@ -6,15 +6,18 @@ import QrRes from './QrRes';
 import Result from './Result';
 import Test from './Test';
 
-export default function App({ qsts, results, user }) {
+export default function App({
+  qsts, results, user, id,
+}) {
+  console.log(user, 'AAAAAAAAA');
   return (
     <div className="wrapper">
       <NavBar />
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/test" element={<Test qsts={qsts} user={user} />} />
-        <Route path="/result" element={<Result />} />
-        <Route path="/result/:id" element={<QrRes />} />
+        <Route path="/result/:id" element={<Result id={id} />} />
+        <Route path="/result/:id/result" element={<QrRes user={user} results={results} qsts={qsts} />} />
       </Routes>
     </div>
   );

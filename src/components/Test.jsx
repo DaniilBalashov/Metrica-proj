@@ -11,7 +11,7 @@ export default function Test({ qsts, user }) {
     });
     setIndex((prev) => {
       if (prev < qsts.length - 1) return prev + 1;
-      window.location = '/result';
+      window.location = `/result/${user.id}`;
       return window.location;
     });
   };

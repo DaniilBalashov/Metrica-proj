@@ -10,7 +10,7 @@ import quest from '../questions.json';
 import apiRouter from './routes/apiRouter';
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.DB_PORT || 3000;
 
 app.engine('jsx', jsxRender);
 app.set('view engine', 'jsx');
