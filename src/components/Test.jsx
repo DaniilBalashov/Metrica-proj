@@ -18,39 +18,45 @@ export default function Test({ qsts, user }) {
   return (
     <>
       <div
+        className="mainQuestion"
         dangerouslySetInnerHTML={{ __html: qsts[index]?.content }}
       />
-      {qsts[index]?.questionImg ? (<div dangerouslySetInnerHTML={{ __html: qsts[index].questionImg }} />)
-        : (<div />)}
-      <form onSubmit={changeHanler}>
-        <div className="form-check">
-          <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="0" />
-          <label className="form-check-label" htmlFor="flexRadioDefault1">
-            <div dangerouslySetInnerHTML={{ __html: qsts[index].answers[0]?.content }} />
-          </label>
-        </div>
-        <div className="form-check">
-          <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="1" />
-          <label className="form-check-label" htmlFor="flexRadioDefault2">
-            <div dangerouslySetInnerHTML={{ __html: qsts[index].answers[1]?.content }} />
-          </label>
-        </div>
-        <div className="form-check">
-          <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" value="2" />
-          <label className="form-check-label" htmlFor="flexRadioDefault3">
-            <div dangerouslySetInnerHTML={{ __html: qsts[index].answers[2]?.content }} />
-          </label>
-        </div>
-        {qsts[index].answers[3] ? (
-          <div className="form-check">
-            <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4" value="3" />
-            <label className="form-check-label" htmlFor="flexRadioDefault4">
-              <div dangerouslySetInnerHTML={{ __html: qsts[index].answers[3]?.content }} />
+      <div className="underCont">
+        {qsts[index]?.questionImg ? (<div className="image" dangerouslySetInnerHTML={{ __html: qsts[index].questionImg }} />)
+          : (<div />)}
+        <form onSubmit={changeHanler}>
+          <div className="variants">
+            <input className="checkboxes" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="0" />
+            <label className="form-check-label" htmlFor="flexRadioDefault1">
+              <div dangerouslySetInnerHTML={{ __html: qsts[index].answers[0]?.content }} />
             </label>
           </div>
-        ) : (<div />)}
-        <button type="submit">Ответить</button>
-      </form>
+          <div className="variants">
+            <input className="checkboxes" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="1" />
+            <label className="form-check-label" htmlFor="flexRadioDefault2">
+              <div dangerouslySetInnerHTML={{ __html: qsts[index].answers[1]?.content }} />
+            </label>
+          </div>
+          <div className="variants">
+            <input className="checkboxes" type="radio" name="flexRadioDefault" id="flexRadioDefault3" value="2" />
+            <label className="form-check-label" htmlFor="flexRadioDefault3">
+              <div dangerouslySetInnerHTML={{ __html: qsts[index].answers[2]?.content }} />
+            </label>
+          </div>
+          {qsts[index].answers[3] ? (
+            <div className="variants">
+              <input className="checkboxes" type="radio" name="flexRadioDefault" id="flexRadioDefault4" value="3" />
+              <label className="form-check-label" htmlFor="flexRadioDefault4">
+                <div dangerouslySetInnerHTML={{ __html: qsts[index].answers[3]?.content }} />
+              </label>
+            </div>
+          ) : (<div />)}
+          <div className="ansBtn">
+            <button type="submit" className="answerButton">ОТВЕТИТЬ</button>
+          </div>
+          {/* <hr className="horRuleEnd" /> */}
+        </form>
+      </div>
     </>
   );
 }
